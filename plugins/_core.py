@@ -296,7 +296,7 @@ def button(bot, update):
     description = Translation.CUSTOM_CAPTION_UL_FILE
     if "fulltitle" in response_json:
         description = response_json["fulltitle"][0:1021]
-    if ("@" in custom_file_name) and (str(update.from_user.id) not in Config.UTUBE_BOT_USERS):
+    if ( in custom_file_name) and (str(update.from_user.id) not in Config.UTUBE_BOT_USERS):
         bot.edit_message_text(
             chat_id=update.message.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
